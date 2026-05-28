@@ -1,5 +1,6 @@
 import React from "react";
 import { IconButton } from "@/ui/components/IconButton";
+import { withBase } from "@/ui/lib/utils";
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" {...props}>
@@ -24,7 +25,7 @@ export function SiteFooter() {
         <div className="flex min-w-[240px] flex-col items-start gap-4">
           <img
             className="h-10 flex-none object-contain"
-            src="/wordmark.svg"
+            src={withBase("/wordmark.svg")}
             alt="Apache Magpie"
           />
           <span className="text-caption font-caption text-subtext-color max-w-[260px]">
@@ -46,8 +47,8 @@ export function SiteFooter() {
         <div className="flex grow shrink-0 basis-0 flex-wrap items-start gap-8">
           <div className="flex grow shrink-0 basis-0 flex-col items-start gap-3 min-w-[130px]">
             <span className="text-body-bold font-body-bold text-default-font">Project</span>
-            <a className="text-body font-body text-subtext-color hover:text-brand-600" href="/#features">Features</a>
-            <a className="text-body font-body text-subtext-color hover:text-brand-600" href="/docs">Documentation</a>
+            <a className="text-body font-body text-subtext-color hover:text-brand-600" href={`${withBase("/")}#features`}>Features</a>
+            <a className="text-body font-body text-subtext-color hover:text-brand-600" href={withBase("/docs")}>Documentation</a>
             <a className="text-body font-body text-subtext-color hover:text-brand-600" href="https://github.com/apache/airflow-steward/issues">Roadmap</a>
             <a className="text-body font-body text-subtext-color hover:text-brand-600" href="https://github.com/apache/airflow-steward/releases">Changelog</a>
           </div>

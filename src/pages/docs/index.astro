@@ -14,7 +14,7 @@ const first = all.find((e) => e.id === "README.md") ?? all[0];
   <p>Pick a topic from the sidebar to get started.</p>
   {first && (
     <p>
-      <a href={`/docs/${first.id.replace(/\.md$/, "")}`}>→ Start with {first.id.replace(/\.md$/, "")}</a>
+      <a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/docs/${first.id.replace(/\.md$/, "")}`}>→ Start with {first.id.replace(/\.md$/, "")}</a>
     </p>
   )}
 </DocsLayout>

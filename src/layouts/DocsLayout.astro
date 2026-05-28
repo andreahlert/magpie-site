@@ -28,13 +28,15 @@ const sortedGroups = Array.from(groups.values()).sort((a, b) => {
   if (b.name === "_root") return 1;
   return a.name.localeCompare(b.name);
 });
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <BaseLayout title={title ? `${title} — Apache Magpie Docs` : "Apache Magpie Docs"}>
   <SiteHeader />
   <div class="flex w-full">
     <aside class="w-64 flex-none border-r border-neutral-200 bg-neutral-50 px-5 py-8 overflow-y-auto sticky top-0 max-h-screen mobile:hidden">
-      <a href="/" class="block mb-6 text-body-bold font-body-bold text-brand-700 hover:text-brand-600">← Back to home</a>
+      <a href={`${base}/`} class="block mb-6 text-body-bold font-body-bold text-brand-700 hover:text-brand-600">← Back to home</a>
       <nav class="flex flex-col gap-6">
         {sortedGroups.map((group) => (
           <div>
@@ -45,7 +47,7 @@ const sortedGroups = Array.from(groups.values()).sort((a, b) => {
               {group.items.map((item) => (
                 <li>
                   <a
-                    href={`/docs/${item.slug}`}
+                    href={`${base}/docs/${item.slug}`}
                     class={`block px-3 py-1.5 rounded-md text-body font-body capitalize ${currentSlug === item.slug ? "bg-brand-100 text-brand-800" : "text-default-font hover:bg-neutral-100"}`}
                   >
                     {item.label}

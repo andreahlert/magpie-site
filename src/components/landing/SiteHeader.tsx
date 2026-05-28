@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/ui/components/Button";
 import { IconButton } from "@/ui/components/IconButton";
 import { ArrowRight, Menu } from "lucide-react";
+import { withBase } from "@/ui/lib/utils";
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" {...props}>
@@ -17,24 +18,24 @@ export function SiteHeader({ tone = "default" }: { tone?: "default" | "hero" }) 
   return (
     <nav className="relative z-10 flex w-full items-center justify-between bg-default-background px-8 py-5 mobile:px-4">
       <a
-        href="/"
+        href={withBase("/")}
         aria-label="Apache Magpie home"
         className="flex items-end justify-end gap-2 px-2 py-2"
       >
         <img
           className="h-10 w-10 flex-none object-cover"
-          src="/subframe-mark.svg"
+          src={withBase("/subframe-mark.svg")}
           alt="Apache Magpie"
         />
         <img
           className="h-10 flex-none object-contain"
-          src="/subframe-wordmark.png"
+          src={withBase("/subframe-wordmark.png")}
           alt="Magpie"
         />
       </a>
       <div className="flex items-center gap-7 mobile:hidden">
-        <a className="text-body font-body text-brand-600 hover:text-brand-700" href="/#features">Features</a>
-        <a className="text-body font-body text-brand-600 hover:text-brand-700" href="/docs">Docs</a>
+        <a className="text-body font-body text-brand-600 hover:text-brand-700" href={`${withBase("/")}#features`}>Features</a>
+        <a className="text-body font-body text-brand-600 hover:text-brand-700" href={withBase("/docs")}>Docs</a>
         <a className="text-body font-body text-brand-600 hover:text-brand-700" href="https://lists.apache.org/list.html?dev-magpie@airflow.apache.org">Community</a>
         <a className="text-body font-body text-brand-600 hover:text-brand-700" href="https://github.com/apache/airflow-steward">GitHub</a>
       </div>
@@ -44,7 +45,7 @@ export function SiteHeader({ tone = "default" }: { tone?: "default" | "hero" }) 
             Star on GitHub
           </Button>
         </a>
-        <a href="/docs">
+        <a href={withBase("/docs")}>
           <Button icon={<ArrowRight />}>Get Started</Button>
         </a>
         <IconButton

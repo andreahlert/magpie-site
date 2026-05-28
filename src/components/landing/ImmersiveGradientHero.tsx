@@ -9,6 +9,7 @@ import { Particles } from "@/ui/components/ui/particles";
 import { ShimmerButton } from "@/ui/components/ui/shimmer-button";
 import { BlurFade } from "@/ui/components/ui/blur-fade";
 import { TextAnimate } from "@/ui/components/ui/text-animate";
+import { withBase } from "@/ui/lib/utils";
 import {
   ArrowDown as FeatherArrowDown,
   ArrowRight as FeatherArrowRight,
@@ -63,21 +64,21 @@ function ImmersiveGradientHero() {
           refresh={false}
         />
         <nav className="relative z-10 flex w-full items-center justify-between bg-default-background px-8 py-5 mobile:px-4">
-          <a href="/" aria-label="Apache Magpie home" className="flex items-end justify-end gap-2 px-2 py-2">
+          <a href={withBase("/")} aria-label="Apache Magpie home" className="flex items-end justify-end gap-2 px-2 py-2">
             <img
               className="h-10 w-10 flex-none object-cover"
-              src="/subframe-mark.svg"
+              src={withBase("/subframe-mark.svg")}
               alt="Apache Magpie"
             />
             <img
               className="h-10 flex-none object-contain"
-              src="/subframe-wordmark.png"
+              src={withBase("/subframe-wordmark.png")}
               alt="Magpie"
             />
           </a>
           <div className="flex items-center gap-7 mobile:hidden">
             <a className="text-body font-body text-brand-600 hover:text-brand-700" href="#features">Features</a>
-            <a className="text-body font-body text-brand-600 hover:text-brand-700" href="/docs">Docs</a>
+            <a className="text-body font-body text-brand-600 hover:text-brand-700" href={withBase("/docs")}>Docs</a>
             <a className="text-body font-body text-brand-600 hover:text-brand-700" href="https://lists.apache.org/list.html?dev-magpie@airflow.apache.org">Community</a>
             <a className="text-body font-body text-brand-600 hover:text-brand-700" href="https://github.com/apache/airflow-steward">GitHub</a>
           </div>
@@ -91,7 +92,7 @@ function ImmersiveGradientHero() {
                 Star on GitHub
               </Button>
             </a>
-            <a href="/docs">
+            <a href={withBase("/docs")}>
               <Button icon={<FeatherArrowRight />}>Get Started</Button>
             </a>
             <IconButton
@@ -129,7 +130,7 @@ function ImmersiveGradientHero() {
               </BlurFade>
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              <a href="/docs">
+              <a href={withBase("/docs")}>
                 <ShimmerButton
                   shimmerColor="#ffffff"
                   background="rgb(0 74 173)"
@@ -140,7 +141,7 @@ function ImmersiveGradientHero() {
                   <FeatherArrowRight className="!text-white" />
                 </ShimmerButton>
               </a>
-              <a href="/docs">
+              <a href={withBase("/docs")}>
                 <Button
                   className="border border-white/20 bg-white/10 text-white hover:bg-white/20"
                   size="large"
@@ -605,7 +606,7 @@ function ImmersiveGradientHero() {
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <a href="/docs">
+            <a href={withBase("/docs")}>
               <Button size="large" icon={<FeatherArrowRight />}>
                 Get Started Free
               </Button>
@@ -627,7 +628,7 @@ function ImmersiveGradientHero() {
           <div className="flex min-w-[240px] flex-col items-start gap-4">
             <img
               className="h-10 flex-none object-contain"
-              src="/wordmark.svg"
+              src={withBase("/wordmark.svg")}
               alt="Apache Magpie"
             />
             <span className="text-caption font-caption text-subtext-color max-w-[260px]">
@@ -650,7 +651,7 @@ function ImmersiveGradientHero() {
             <div className="flex grow shrink-0 basis-0 flex-col items-start gap-3 min-w-[130px]">
               <span className="text-body-bold font-body-bold text-default-font">Project</span>
               <a className="text-body font-body text-subtext-color hover:text-brand-600" href="#features">Features</a>
-              <a className="text-body font-body text-subtext-color hover:text-brand-600" href="/docs">Documentation</a>
+              <a className="text-body font-body text-subtext-color hover:text-brand-600" href={withBase("/docs")}>Documentation</a>
               <a className="text-body font-body text-subtext-color hover:text-brand-600" href="https://github.com/apache/airflow-steward/issues">Roadmap</a>
               <a className="text-body font-body text-subtext-color hover:text-brand-600" href="https://github.com/apache/airflow-steward/releases">Changelog</a>
             </div>
